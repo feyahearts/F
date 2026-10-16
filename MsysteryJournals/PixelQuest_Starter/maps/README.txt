@@ -1,0 +1,1 @@
+Map desa Pixel Quest dalam format Tiled JSON (.tmj). Buka lewat Tiled: File > Open File > pilih village.tmj. Ukuran 48 x 36 tile, tiap tile 32x32. Tileset ada di ../assets/tiles/village_tileset.png. Ini peta visual untuk diedit di Tiled; game Phaser lama masih menggambar desa dari game.js sampai kita sambungkan map ini ke kode game.

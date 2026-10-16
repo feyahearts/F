@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pixel Quest — Misteri Buku Kas</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Phaser dimuat dari CDN; perlu koneksi internet saat game dijalankan. -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+</head>
+<body>
+  <main id="game-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon">✦</span><div><strong>PIXEL QUEST</strong><small>Misteri Buku Kas</small></div></div>
+      <div class="stats"><span>✦ <b id="score">0</b> poin</span><span>▣ <b id="clues">0</b> petunjuk</span><span id="scene-name">Desa Lumina</span><span id="save-status" title="Progress disimpan di browser ini">Tersimpan otomatis</span></div>
+    </header>
+    <section id="game-container" aria-label="Area permainan"></section>
+    <aside id="mission-card" aria-label="Misi utama">
+      <div class="mission-kicker">✦ MISI UTAMA</div>
+      <strong id="mission-progress">Bantu Bimo · 0/5 level</strong>
+      <p id="mission-detail">Bantu warga menyelesaikan audit dari Level 1 sampai Level 5.</p>
+      <ol id="mission-levels">
+        <li>○ Level 1: Cari Kesalahan</li><li>○ Level 2: Hitung Selisih</li><li>○ Level 3: Periksa Bukti</li><li>○ Level 4: Cari Pola</li><li>○ Level 5: Pecahkan Kode</li>
+      </ol>
+    </aside>
+    <footer class="bottombar">
+      <span><kbd>W A S D</kbd> / <kbd>↑ ↓ ← →</kbd> Bergerak</span>
+      <span><kbd>E</kbd> Interaksi / masuk / keluar</span>
+      <span><kbd>ESC</kbd> Tutup dialog</span>
+    </footer>
+    <div id="dialog" class="dialog hidden">
+      <img id="dialog-portrait" class="welcome-portrait hidden" src="assets/guide_portrait.png" alt="Potret karakter yang sedang berbicara">
+      <div class="dialog-content"><div class="dialog-name" id="dialog-name">Penduduk</div>
+      <div id="dialog-text">Halo!</div></div>
+      <button id="dialog-close">Lanjutkan <span>↵</span></button>
+    </div>
+    <section id="quiz-panel" class="quiz-panel hidden" aria-live="polite">
+      <div class="quiz-top"><span id="quiz-level">LEVEL 1</span><span id="quiz-progress">Soal 1 dari 5</span></div>
+      <div class="timer-strip"><span id="level-clock">⏱ Waktu level: 06:50</span><span id="question-clock">Soal: 01:30</span><span id="attempts-left">Kesempatan: 3</span></div>
+      <h2 id="quiz-title">Misi Audit</h2>
+      <p id="quiz-question"></p>
+      <div id="quiz-details" class="quiz-details"></div>
+      <div id="quiz-options" class="quiz-options"></div>
+      <p id="quiz-feedback" class="quiz-feedback"></p>
+      <div class="quiz-bottom"><span id="quiz-timer">⏱ Waktu level: 06:50</span><button id="quiz-next" disabled>Jawab dulu</button></div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
